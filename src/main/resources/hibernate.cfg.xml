@@ -14,5 +14,6 @@
 
         <mapping class = "models.File"/>
         <mapping class = "models.Folder"/>
+        <mapping class = "models.Owner"/>
     </session-factory>
 </hibernate-configuration>

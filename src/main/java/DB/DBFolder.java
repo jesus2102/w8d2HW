@@ -12,7 +12,7 @@ import java.util.List;
 public class DBFolder {
     private static Session session;
 
-    public  static List<File> getFilesInFolder(Folder folder){
+    public static List<File> getFilesInFolder(Folder folder){
         session = db.HibernateUtil.getSessionFactory().openSession();
         List<File> result = null;
 
