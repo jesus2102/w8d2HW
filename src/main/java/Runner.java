@@ -1,5 +1,6 @@
 import DB.DBFolder;
 import DB.DBHelper;
+import DB.DBOwner;
 import models.File;
 import models.Folder;
 import models.Owner;
@@ -10,12 +11,13 @@ public class Runner {
 
     public static void main(String[] arg) {
 
-        Owner owner = new Owner("Jesus", "j2102");
+        Owner owner1 = new Owner("Jesus", "j2102");
+        DBHelper.save(owner1);
 
-        Folder folder1 = new Folder("E22", owner);
+        Folder folder1 = new Folder("E22", owner1);
         DBHelper.save(folder1);
 
-        Folder folder2 = new Folder("E24", owner);
+        Folder folder2 = new Folder("E24", owner1);
         DBHelper.save(folder2);
 
 
@@ -30,6 +32,8 @@ public class Runner {
 
         List<File> files = DBHelper.getAll(File.class);
 
-        List<File> FilesInFolder = DBFolder.getFilesInFolder(folder1);
+        List<File> filesInFolder = DBFolder.getFilesInFolder(folder1);
+
+        List<Folder> ownerFolders = DBOwner.getFoldersOfOwner(owner1);
     }
 }

@@ -16,6 +16,7 @@ public class Folder {
 
     public Folder(String title, Owner owner){
         this.title = title;
+        this.owner = owner;
     }
 
     @Id
