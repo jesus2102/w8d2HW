@@ -10,10 +10,11 @@ public class Folder {
     private int id;
     private String title;
     private List<File> files;
+    private Owner owner;
 
     public Folder(){}
 
-    public Folder(String title){
+    public Folder(String title, Owner owner){
         this.title = title;
     }
 
@@ -44,5 +45,15 @@ public class Folder {
 
     public void setFiles(List<File> files) {
         this.files = files;
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "owner_id", nullable = false)
+    public Owner getOwner(){
+        return this.owner;
+    }
+
+    public void setOwner(Owner owner) {
+        this.owner = owner;
     }
 }
