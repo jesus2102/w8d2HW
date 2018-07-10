@@ -1,6 +1,7 @@
 package models;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name="folders")
@@ -8,6 +9,7 @@ public class Folder {
 
     private int id;
     private String title;
+    private List<File> files;
 
     public Folder(){}
 
@@ -33,5 +35,14 @@ public class Folder {
 
     public void setTitle(String title) {
         this.title = title;
+    }
+
+    @OneToMany(mappedBy = "File", fetch = FetchType.LAZY)
+    public List<File> getFiles() {
+        return files;
+    }
+
+    public void setFiles(List<File> files) {
+        this.files = files;
     }
 }

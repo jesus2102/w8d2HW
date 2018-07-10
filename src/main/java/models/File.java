@@ -60,7 +60,7 @@ public class File {
     }
 
     @ManyToOne
-    @JoinColumn(name = "folder", nullable = false)
+    @JoinColumn(name = "folder_id", nullable = false)
     public Folder getFolder(){
         return this.folder;
     }
