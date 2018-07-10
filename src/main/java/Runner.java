@@ -1,3 +1,4 @@
+import DB.DBFolder;
 import DB.DBHelper;
 import models.File;
 import models.Folder;
@@ -9,7 +10,7 @@ public class Runner {
     public static void main(String[] arg) {
 
         Folder folder1 = new Folder("E22");
-        DBHelper.save(folder);
+        DBHelper.save(folder1);
 
         Folder folder2 = new Folder("E24");
         DBHelper.save(folder2);
@@ -25,5 +26,7 @@ public class Runner {
         DBHelper.save(file3);
 
         List<File> files = DBHelper.getAll(File.class);
+
+        List<File> FilesInFolder = DBFolder.getFilesInFolder(folder1);
     }
 }
