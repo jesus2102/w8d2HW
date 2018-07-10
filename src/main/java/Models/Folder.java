@@ -1,14 +1,15 @@
 package Models;
 
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
+@Entity
+@Table(name="folders")
 public class Folder {
 
     private int id;
     private String title;
+
+    public Folder(){}
 
     public Folder(String title){
         this.title = title;

@@ -1,16 +1,17 @@
 package Models;
 
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
+@Entity
+@Table(name="Files")
 public class File {
 
     private int id;
     private String name;
     private String extension;
     private double size;
+
+    public File(){}
 
     public File(String name, String extension, double size){
         this.name = name;
@@ -47,7 +48,7 @@ public class File {
         this.extension = extension;
     }
 
-    @Column(name = size)
+    @Column(name = "size")
     public double getSize() {
         return size;
     }
