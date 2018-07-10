@@ -1,7 +1,8 @@
-
 import DB.DBHelper;
-import Models.File;
-import Models.Folder;
+import models.File;
+import models.Folder;
+
+import java.util.List;
 
 public class Runner {
 
@@ -20,5 +21,6 @@ public class Runner {
         File file3 = new File("Program", ".txt", 10.46);
         DBHelper.save(file3);
 
+        List<File> files = DBHelper.getAll(File.class);
     }
 }
